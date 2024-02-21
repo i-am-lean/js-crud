@@ -1,0 +1,99 @@
+{{! 
+Це код container файлу для index сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+ }}
+
+<main class='main'>
+  {{#with data}}
+    <section>
+
+      <div class='form'>
+        <h1 class='form__title'>Редагування товару</h1>
+
+        <form method='PATH' action='/product-edit'>
+
+          <div class='form__content form__card'>
+            <div class='form__field'>
+              <h2 class='form__header'>Інформація про товар</h2>
+            </div>
+
+            <div class='form__line'>
+              <div class='form__field'>
+                <lable for='name' class='form_lable'>Назва
+                  товару:</lable>
+                <input
+                  value='{{name}}'
+                  type='name'
+                  name='name'
+                  id=''
+                  class='form__input'
+                />
+              </div>
+
+              <div class='form__field'>
+                <lable
+                  for='price'
+                  class='form_lable'
+                >Ціна:</lable>
+                <input
+                  value='{{price}}'
+                  type='price'
+                  name='price'
+                  id=''
+                  class='form__input'
+                />
+              </div>
+
+              <div class='form__field'>
+                <lable
+                  for='id'
+                  class='form_lable'
+                >ID:</lable>
+                <input
+                  value='{{id}}'
+                  type='id'
+                  name='id'
+                  id=''
+                  class='form__input'
+                />
+              </div>
+            </div>
+
+            <div class='form__field'>
+              <lable
+                for='description'
+                class='form_lable'
+              >Короткий опис товару:</lable>
+              <input
+                value='{{description}}'
+                type='description'
+                name='description'
+                id=''
+                class='form__input'
+              />
+            </div>
+
+            <div class='action'>
+
+              <button class='form__button click'>Зберегти
+                оновлення</button>
+              <a
+                href='/product-delete?id={{ID}}'
+                class='form__button red click'
+              ><center>Видалити оновлення</center></a>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </section>
+  {{/with}}
+</main>
+
+{{! 
+    Цей код містить лише те, що буде виводитись в <body>
+    Адже наш layout/default.hbs має вже структуру HTML
+}}
