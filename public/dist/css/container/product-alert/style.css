@@ -1,37 +1,19 @@
-.box {
-  margin: 40px;
-  display: flex;
-  padding: 20px;
-  gap: 32px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  transition: 0.3s;
-  align-items: center;
-  justify-content: space-between;
-}
-.box__title {
-  font-size: 20px;
-}
-.box__button {
-  border: 1px solid #ddd;
-  background-color: #261ff2;
-  color: #ddd;
-  padding: 12px;
-  border-radius: 8px;
-  text-decoration: none;
-}
+/* Error: expected ")".
+ *   ,
+ * 4 |     primary: #261ff2,
+ *   |                      ^
+ *   '
+ *   src/lib/var.scss 4:22                       @use
+ *   src/lib/service.scss 4:1                    @use
+ *   src/container/product-alert/style.scss 1:1  root stylesheet */
 
-.form:hover {
-  box-shadow: 0px 0px 20px rgba(9, 61, 166, 0.1);
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: expected ")".\a   \2577 \a 4 \2502      primary: #261ff2,\a   \2502                       ^\a   \2575 \a   src/lib/var.scss 4:22                       @use\a   src/lib/service.scss 4:1                    @use\a   src/container/product-alert/style.scss 1:1  root stylesheet';
 }
-
-.click {
-  transition: 0, 2s;
-}
-
-.click:hover {
-  opacity: 0.7;
-  cursor: pointer;
-}
-
-/*# sourceMappingURL=style.css.map */

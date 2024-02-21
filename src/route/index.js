@@ -189,8 +189,6 @@ class Product {
 router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
-  const list = User.getList()
-
 
   const list = User.getList();
 
@@ -423,7 +421,7 @@ router.get('/product-delete', function (req, res) {
   // ↑↑ сюди вводимо JSON дані
 })
 
-=======
+
   res.render('success-info', {
    
     style: 'success-info',
