@@ -1,16 +1,12 @@
 $colorMap: (
     light: #ddd,
-
     primary: #261ff2,
-=======
-
 );
 
 @function color($key){
     @return map-get($colorMap, $key);
 
 }
-=======
-}
+
     
 
