@@ -1,112 +1,92 @@
+
 <main class='main'>
+
   {{#with data.purchase}}
-    <form method="POST" action="/purchase-submit?id={id}" class="form-card">
+    <form method="POST" action="/purchase-update?id={{id}}" class="form-card">
 
-      <div class="info">
-        {{> heading title ="Інформація про  замовлення"}}
 
-        <div class="info_line">
+    <div class="info">
+          {{> heading title="Інформація про замовлення"}}
+      <div class="info_line">
+        <div class="info-item">
+          <div class="hr">ID:</div>
+          <div>{{id}}</div>
+        </div> 
+      </div>
+
+        {{>divider}}
+
+      <div class="info_line"> 
+        <div class="info_line-col">
           <div class="info-item">
-            <div class="hr">ID:</div>
-            <div>{{id}}</div>
+            <div class="hr">Ім'я:</div>
+            <div>{{firstname}}</div>
+          </div>
+          <div class="info-item">
+            <div class="hr">Прізвище:</div>
+            <div>{{lastname}}</div>
           </div>
         </div>
-
-          {{>divider}}
-
-          <div class="info_line">
-            <div class="info_line-col">
-
-              <div class="info-item">
-                <div class="hr">Імʼя:</div>
-                <div>{{firstname}}</div>
-              </div>
-
-              <div class="info-item">
-                <div class="hr">Прізвище:</div>
-                <div>{{lastname}}</div>
-              </div>
-
-              <div class="info-item">
-                <div class="hr">Телефон:</div>
-                <div>{{phone}}</div>
-              </div>
-
-              <div class="info-item">
-                <div class="hr">Пошта:</div>
-                <div>{{email}}</div>
-              </div>
-
-            </div>          
+        <div class="info_line-col">
+          <div class="info-item">
+            <div class="hr">Телефон:</div>
+            <div>{{phone}}</div>
           </div>
-
-          {{> divider}}
-
-          <div class="info_line">
-
-            <div class="info-item">
-              <div class="hr">Адреса доставки:</div>
-              <div>{{#if adress}}
-                {{address}}
-                {{else}}
-                Введіть адресу
-                {{/if}}</div>
-            </div>
-
-            <div class="info-item">
-              <div class="hr">
-                Назва товару:
-              </div>
-              <div>{{product.title}}</div>
-
-            </div>
-
+          <div class="info-item">
+            <div class="hr">Пошта:</div>
+            <div>{{email}}</div>
           </div>
-
-          {{> divider}}
-
-          <div class="info_line">
-            <div class="info_line-col">
-              <div class="info-item">
-                <div class="hr">
-                  Вартість товарів:
-                </div>
-                <div>{{totalPrice}}</div>
-              </div>
-
-              <div class="info-item">
-                <div class="hr">
-                  Вартість доставки:
-                </div>
-                <div>{{deliveryPrice}}</div>
-              </div>
-
-              <div class="info-item">
-                <div class="hr">
-                  Сума до сплати:
-                </div>
-                <div>{{totalPrice}}</div>
-              </div>
-
-              <div class="info_line-col">
-                <div class="info-item">
-                  <div class="hr">
-                    Нараховані бонуси:
-                  </div>
-                  <div>{{bonus}}</div>
-                </div>
-              </div>
-              {{> divider}}
-
-              {{> button text="Змінити дані"}}
-
-            </div>
-
-          </div>
-
-        
+        </div>
       </div>
+
+      {{>divider}}
+
+      <div class="info_line">
+
+        <div class="info-item">
+          <div class="hr">Адреса доставки:</div>
+          <div>{{#if address}}{{address}}{{else}}Введіть адресу{{/if}}</div>
+        </div> 
+        <div class="info-item">
+          <div class="hr">Назва товару:</div>
+          <div>{{product.title}}</div>
+        </div> 
+      </div>
+
+      {{>divider}}
+
+      <div class="info_line"> 
+        <div class="info_line-col">
+          <div class="info-item">
+            <div class="hr">Вартість товарів:</div>
+            <div>{{totalPrice}}</div>
+          </div>
+          <div class="info-item">
+            <div class="hr">Вартіть доставки:</div>
+            <div>{{deliveryPrice}}</div>
+          </div>
+        </div>
+        <div class="info_line-col">
+          <div class="info-item">
+            <div class="hr">Сума до сплати:</div>
+            <div>{{totalPrice}}</div>
+          </div>
+          <div class="info-item">
+            <div class="hr">Нараховані бонуси:</div>
+            <div>{{bonus}}</div>
+          </div>
+        </div>
+      </div>
+      {{>divider}}
+
+
+        {{> button text="Змінити дані"}}
+    </div>
+
       
-    </form>
+  </form>
   {{/with}}
+
 </main>
+
+

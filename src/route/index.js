@@ -533,6 +533,18 @@ router.get('/purchase-list', function (req, res) {
   })
 
 })
+
+// ================================================================
+router.get('/purchase-details', function (req, res) {
+  const id = Number(req.query.id)
+
+  res.render('purchase-details', {
+    style: 'purchase-details',
+    data: {
+      purchase: Purchase.getById(id),
+    },
+  })
+})
 // ================================================================
 
 router.get('/purchase-update', function (req, res) {
