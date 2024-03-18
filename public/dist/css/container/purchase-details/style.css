@@ -1,0 +1,166 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.heading__title {
+  font-size: 20px;
+  color: #261ff2;
+}
+
+.heading__info {
+  font-size: 16px;
+  color: gray;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+}
+.product-card__img {
+  height: 300px;
+  width: 100%;
+}
+.product-card__title {
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 4px;
+}
+.product-card__subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  padding-bottom: 4px;
+  line-height: 1.5;
+  color: grey;
+}
+.product-card__category {
+  padding: 5px 10px;
+  border-radius: 36px;
+  font-size: 14px;
+  color: gray;
+  border: 1px solid transparent;
+}
+.product-card__button {
+  background-color: #261ff2;
+  color: white;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.product-card__category--1 {
+  border-color: rgb(41, 105, 41);
+  color: rgb(41, 105, 41);
+}
+
+.product-card__category--2 {
+  border-color: #261ff2;
+  color: #261ff2;
+}
+
+.product-card__button:hover {
+  box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.1);
+  opacity: 0.7;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.field__label {
+  font-size: 14px;
+}
+
+.field__input {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.field--disabled {
+  position: absolute;
+  display: none;
+}
+
+.button {
+  background-color: #261ff2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.button:hover {
+  opacity: 0.7;
+}
+
+.product-info__divider {
+  width: 100%;
+  height: 1px;
+  background: #dddddd;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+  font-size: 14px;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+}
+
+.info_line-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cart {
+  display: grid;
+  gap: 8px;
+}
+
+.info-item {
+  gap: 8px;
+  justify-content: space-around;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.hr {
+  color: #999999;
+  margin-bottom: 8px;
+}
+
+.button {
+  width: 100%;
+}
+
+.heading__title {
+  color: #261ff2;
+}
+
+/*# sourceMappingURL=style.css.map */
