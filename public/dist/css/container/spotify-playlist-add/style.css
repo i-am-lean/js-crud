@@ -86,4 +86,13 @@ html {
   color: #BDBDBD;
 }
 
-/*# sourceMappingURL=spotify.css.map */
+html {
+  background-color: #121212;
+}
+
+.track__list {
+  padding: 20px;
+  background-color: #282828;
+}
+
+/*# sourceMappingURL=style.css.map */

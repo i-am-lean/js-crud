@@ -86,4 +86,35 @@ html {
   color: #BDBDBD;
 }
 
-/*# sourceMappingURL=spotify.css.map */
+body {
+  background-color: black;
+}
+
+.head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.head__buttons {
+  display: flex;
+  gap: 24px;
+}
+.head h1 {
+  font-size: 40px;
+}
+
+.playlists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.playlist__content {
+  padding: 12px 0;
+}
+
+.playlist__name {
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

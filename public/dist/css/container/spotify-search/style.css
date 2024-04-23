@@ -86,4 +86,22 @@ html {
   color: #BDBDBD;
 }
 
-/*# sourceMappingURL=spotify.css.map */
+.search {
+  background-color: #292929;
+  padding: 8px 32px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 54px 1fr auto;
+  gap: 32px;
+  color: #ddd;
+  font-size: 24px;
+}
+.search__button {
+  color: #ddd;
+  transition: opacity 0.6s;
+}
+.search__button:hover {
+  opacity: 0.6;
+}
+
+/*# sourceMappingURL=style.css.map */
