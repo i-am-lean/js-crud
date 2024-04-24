@@ -355,41 +355,28 @@ router.get('/spotify-track-delete', function (req, res){
 
 router.get('/spotify-playlist-add', function (req, res) {
   const playlistId = Number(req.query.playlistId)
-
+  
   const playlist = Playlist.getById(playlistId)
-  console.log('/spotify-playlist-add')
-
-  if (!playlist) {
-    return res.render('alert', {
-      style: 'alert',
-      data: {
-        message: 'Помилка',
-        info: 'Плейлист не знайдено',
-        link: '/',
-      },
-    })
-  }
-
+  const allTracks = Track.getList()
+  console.log(playlistId, playlist, allTracks)
   res.render('spotify-playlist-add', {
     style: 'spotify-playlist-add',
 
     data: {
-      playistId: playlist.id,
-      tracks: Track.getList(),
-      name: playlist.name,
+      playlistId: playlist.id,
+      tracks: allTracks,
     },
   })
 })
 
-// ================================================================
 
-router.get('/spotify-track-add', function (req, res) {
-  const playlistId =  Number(req.query.playlistId)
-  const trackId = Number(req.query.trackId)
+// ================================================================
+router.post('/spotify-playlist-add', function (req, res) {
+  const playlistId = Number(req.body.playlistId)
+  const trackId = Number(req.body.trackId)
   console.log('/spotify-track-add', playlistId, trackId)
   const playlist = Playlist.getById(playlistId)
-  const track = Track.getById(trackId)
-  console.log('objs', playlist, track)
+
 
   if (!playlist) {
     return res.render('alert', {
@@ -397,24 +384,24 @@ router.get('/spotify-track-add', function (req, res) {
       data: {
         message: 'Помилка',
         info: 'Плейлист не знайдено',
-        link: '/spotify-playlist?id=${playlistId}',
+        link: `/spotify-playlist?id=${playlistId}`,
       },
     })
   }
-
-  if (!track) {
+  const trackToAdd = Track.getList().find(
+    (track) => track.id === trackId,
+  )
+  if (!trackToAdd) {
     return res.render('alert', {
       style: 'alert',
       data: {
         message: 'Помилка',
-        info: 'Трек не знайдено',
-        link: '/spotify-playlist?id=${playlistId}',
+        info: 'Такого треку не знайдено',
+        link: `/spotify-playlist-add?playlistId=${playlistId}`,
       },
     })
   }
-
-  playlist.addTrack(track)
-
+  playlist.tracks.push(trackToAdd)
   res.render('spotify-playlist', {
     style: 'spotify-playlist',
 
