@@ -134,12 +134,14 @@
 
 .product-card__subtitle {
   font-size: 16px;
+  color: #BDBDBD;
 }
 
 .product-info__category {
   padding: 5px 10px;
   border-radius: 30px;
   font-size: 14px;
+  color: #121212;
   border: 1px solid transparent;
 }
 
